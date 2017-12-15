@@ -22,9 +22,9 @@ the field in javascript simply by changing the javascript object, like this:
 This attribute can be set on any HTML element. Depending on which HTML element,
 it will expect and set different properites:
 
-- A: href, title and innerHTML
-- IMG: src, alt and title
-- INPUT: value
+- ``A``: href, title and innerHTML
+- ``IMG``: src, alt and title
+- ``INPUT``: value
 - ...
 
 Fields may not contain other fields, except when using ``data-simply-content="fixed"``.
@@ -44,15 +44,15 @@ data-simply-content
 Tells SimplyEdit what kind of content the field may contain. Expects one of
 the following values:
 
-- fixed
+- ``fixed``
   Only attributes on the element are editable. The innerHTML will not be set 
   or updated.
 
-- attributes
+- ``attributes``
   Only make the attributes of the element editable. By default all attributes
   will be stored. You can override this with the ``data-simply-attributes`` attribute.
 
-- template
+- ``template``
   The value of the field will be used to select a template. The template name
   must match the value of the field. If the field is not available in the data
   store yet, you can set a default value with the ``data-simply-default-value`` attribute.

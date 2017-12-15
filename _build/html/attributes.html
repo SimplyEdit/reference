@@ -67,9 +67,9 @@ the field in javascript simply by changing the javascript object, like this:</p>
 <p>This attribute can be set on any HTML element. Depending on which HTML element,
 it will expect and set different properites:</p>
 <ul class="simple">
-<li>A: href, title and innerHTML</li>
-<li>IMG: src, alt and title</li>
-<li>INPUT: value</li>
+<li><tt class="docutils literal"><span class="pre">A</span></tt>: href, title and innerHTML</li>
+<li><tt class="docutils literal"><span class="pre">IMG</span></tt>: src, alt and title</li>
+<li><tt class="docutils literal"><span class="pre">INPUT</span></tt>: value</li>
 <li>...</li>
 </ul>
 <p>Fields may not contain other fields, except when using <tt class="docutils literal"><span class="pre">data-simply-content=&quot;fixed&quot;</span></tt>.</p>
@@ -86,13 +86,13 @@ field is part of a list entry, or if you&#8217;ve specified a different path wit
 <p>Tells SimplyEdit what kind of content the field may contain. Expects one of
 the following values:</p>
 <ul class="simple">
-<li>fixed
+<li><tt class="docutils literal"><span class="pre">fixed</span></tt>
 Only attributes on the element are editable. The innerHTML will not be set
 or updated.</li>
-<li>attributes
+<li><tt class="docutils literal"><span class="pre">attributes</span></tt>
 Only make the attributes of the element editable. By default all attributes
 will be stored. You can override this with the <tt class="docutils literal"><span class="pre">data-simply-attributes</span></tt> attribute.</li>
-<li>template
+<li><tt class="docutils literal"><span class="pre">template</span></tt>
 The value of the field will be used to select a template. The template name
 must match the value of the field. If the field is not available in the data
 store yet, you can set a default value with the <tt class="docutils literal"><span class="pre">data-simply-default-value</span></tt> attribute.</li>
