@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SimplyEdit Events &mdash; SimplyEdit Reference 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SimplyEdit Reference 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to SimplyEdit Reference’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to SimplyEdit Reference’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">SimplyEdit Reference 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="simplyedit-events">
+<h1>SimplyEdit Events<a class="headerlink" href="#simplyedit-events" title="Permalink to this headline">¶</a></h1>
+<p>SimplyEdit uses events to allow you to extend the functionality.</p>
+<div class="section" id="simply-content-loaded">
+<h2>simply-content-loaded<a class="headerlink" href="#simply-content-loaded" title="Permalink to this headline">¶</a></h2>
+<p>This event fires when SimplyEdit is finished initializing the page content.
+It has no parameters. Use this event instead of <cite>DocumentReady</cite>.</p>
+</div>
+<div class="section" id="simply-editmode">
+<h2>simply-editmode<a class="headerlink" href="#simply-editmode" title="Permalink to this headline">¶</a></h2>
+<p>Fires when the user starts the editor. You can&#8217;t prevent this.</p>
+</div>
+<div class="section" id="simply-toolbars-loaded">
+<h2>simply-toolbars-loaded<a class="headerlink" href="#simply-toolbars-loaded" title="Permalink to this headline">¶</a></h2>
+<p>Fires when the editor is finished loading all the toolbars and plugins.</p>
+</div>
+<div class="section" id="simply-data-changed">
+<h2>simply-data-changed<a class="headerlink" href="#simply-data-changed" title="Permalink to this headline">¶</a></h2>
+<p>Fires whenever data managed by SimplyEdit changes. It is fired after the
+change is resolved, so the DOM and the Editor should be in sync.</p>
+<p>Parameters:
+- dataBinding</p>
+</div>
+<div class="section" id="simply-data-applied">
+<h2>simply-data-applied<a class="headerlink" href="#simply-data-applied" title="Permalink to this headline">¶</a></h2>
+<p>Fires after a data-simply-list has been updated.</p>
+<p>Parameter:
+- Target list element.</p>
+</div>
+<div class="section" id="simply-data-saved">
+<h2>simply-data-saved<a class="headerlink" href="#simply-data-saved" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-storage-init">
+<h2>simply-storage-init<a class="headerlink" href="#simply-storage-init" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-storage-file-saved">
+<h2>simply-storage-file-saved<a class="headerlink" href="#simply-storage-file-saved" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-storage-file-deleted">
+<h2>simply-storage-file-deleted<a class="headerlink" href="#simply-storage-file-deleted" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-stash">
+<h2>simply-stash<a class="headerlink" href="#simply-stash" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-stashed">
+<h2>simply-stashed<a class="headerlink" href="#simply-stashed" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-image-save-error">
+<h2>simply-image-save-error<a class="headerlink" href="#simply-image-save-error" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-file-save-error">
+<h2>simply-file-save-error<a class="headerlink" href="#simply-file-save-error" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-page-save-error">
+<h2>simply-page-save-error<a class="headerlink" href="#simply-page-save-error" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="simply-selectable-inserted">
+<h2>simply-selectable-inserted<a class="headerlink" href="#simply-selectable-inserted" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databind-elementresolved">
+<h2>databind:elementresolved<a class="headerlink" href="#databind-elementresolved" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databind-resolved">
+<h2>databind:resolved<a class="headerlink" href="#databind-resolved" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databinding-valuechanged">
+<h2>databinding:valuechanged<a class="headerlink" href="#databinding-valuechanged" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databinding-pause">
+<h2>databinding:pause<a class="headerlink" href="#databinding-pause" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databinding-resume">
+<h2>databinding:resume<a class="headerlink" href="#databinding-resume" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SimplyEdit Events</a><ul>
+<li><a class="reference internal" href="#simply-content-loaded">simply-content-loaded</a></li>
+<li><a class="reference internal" href="#simply-editmode">simply-editmode</a></li>
+<li><a class="reference internal" href="#simply-toolbars-loaded">simply-toolbars-loaded</a></li>
+<li><a class="reference internal" href="#simply-data-changed">simply-data-changed</a></li>
+<li><a class="reference internal" href="#simply-data-applied">simply-data-applied</a></li>
+<li><a class="reference internal" href="#simply-data-saved">simply-data-saved</a></li>
+<li><a class="reference internal" href="#simply-storage-init">simply-storage-init</a></li>
+<li><a class="reference internal" href="#simply-storage-file-saved">simply-storage-file-saved</a></li>
+<li><a class="reference internal" href="#simply-storage-file-deleted">simply-storage-file-deleted</a></li>
+<li><a class="reference internal" href="#simply-stash">simply-stash</a></li>
+<li><a class="reference internal" href="#simply-stashed">simply-stashed</a></li>
+<li><a class="reference internal" href="#simply-image-save-error">simply-image-save-error</a></li>
+<li><a class="reference internal" href="#simply-file-save-error">simply-file-save-error</a></li>
+<li><a class="reference internal" href="#simply-page-save-error">simply-page-save-error</a></li>
+<li><a class="reference internal" href="#simply-selectable-inserted">simply-selectable-inserted</a></li>
+<li><a class="reference internal" href="#databind-elementresolved">databind:elementresolved</a></li>
+<li><a class="reference internal" href="#databind-resolved">databind:resolved</a></li>
+<li><a class="reference internal" href="#databinding-valuechanged">databinding:valuechanged</a></li>
+<li><a class="reference internal" href="#databinding-pause">databinding:pause</a></li>
+<li><a class="reference internal" href="#databinding-resume">databinding:resume</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to SimplyEdit Reference&#8217;s documentation!</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/events.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to SimplyEdit Reference’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">SimplyEdit Reference 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2017, Auke van Slooten.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
