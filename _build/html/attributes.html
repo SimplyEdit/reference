@@ -23,7 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="SimplyEdit Reference 1.0 documentation" href="index.html" /> 
+    <link rel="top" title="SimplyEdit Reference 1.0 documentation" href="index.html" />
+    <link rel="next" title="SimplyEdit Events" href="events.html" />
+    <link rel="prev" title="Welcome to SimplyEdit Reference’s documentation!" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -32,6 +34,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="events.html" title="SimplyEdit Events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to SimplyEdit Reference’s documentation!"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">SimplyEdit Reference 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -47,15 +55,74 @@
 <h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="data-simply-field">
 <h3>data-simply-field<a class="headerlink" href="#data-simply-field" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&lt;h1 data-simply-field=&quot;title&quot;&gt;Title&lt;/h1&gt;
+</pre></div>
+</div>
+<p>Makes an HTML element editable in the browser in editmode. It also adds the
+contents to the data store. This means that you can change the contents of
+the field in javascript simply by changing the javascript object, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">editor</span><span class="o">.</span><span class="n">pageData</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="s">&#39;New Title&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This attribute can be set on any HTML element. Depending on which HTML element,
+it will expect and set different properites:</p>
+<ul class="simple">
+<li>A: href, title and innerHTML</li>
+<li>IMG: src, alt and title</li>
+<li>INPUT: value</li>
+<li>...</li>
+</ul>
+<p>Fields may not contain other fields, except when using <tt class="docutils literal"><span class="pre">data-simply-content=&quot;fixed&quot;</span></tt>.</p>
+<p>Fields with the same name on the same page will always have the same content. Except when the
+field is part of a list entry, or if you&#8217;ve specified a different path with <tt class="docutils literal"><span class="pre">data-simply-path</span></tt>.</p>
 </div>
 <div class="section" id="data-simply-content">
 <h3>data-simply-content<a class="headerlink" href="#data-simply-content" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&lt;a data-simply-field=&quot;link&quot; data-simply-content=&quot;fixed&quot;&gt;
+        &lt;img data-simply-field=&quot;image&quot;&gt;
+&lt;/a&gt;
+</pre></div>
+</div>
+<p>Tells SimplyEdit what kind of content the field may contain. Expects one of
+the following values:</p>
+<ul class="simple">
+<li>fixed
+Only attributes on the element are editable. The innerHTML will not be set
+or updated.</li>
+<li>attributes
+Only make the attributes of the element editable. By default all attributes
+will be stored. You can override this with the <tt class="docutils literal"><span class="pre">data-simply-attributes</span></tt> attribute.</li>
+<li>template
+The value of the field will be used to select a template. The template name
+must match the value of the field. If the field is not available in the data
+store yet, you can set a default value with the <tt class="docutils literal"><span class="pre">data-simply-default-value</span></tt> attribute.</li>
+</ul>
 </div>
 <div class="section" id="data-simply-attributes">
 <h3>data-simply-attributes<a class="headerlink" href="#data-simply-attributes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&lt;button data-simply-field=&quot;product&quot; data-simply-content=&quot;attributes&quot;
+        data-simply-attributes=&quot;data-item-id data-item-name data-item-price&quot;
+&gt;Buy Now&lt;/button&gt;
+&lt;div data-simply-field=&quot;product.data-item-id&quot;&gt;1&lt;/div&gt;
+&lt;div data-simply-field=&quot;product.data-item-name&quot;&gt;Name&lt;/div&gt;
+&lt;div data-simply-field=&quot;product.data-item-price&quot;&gt;99&lt;/div&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="data-simply-template">
 <h3>data-simply-template<a class="headerlink" href="#data-simply-template" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&lt;input type=&quot;radio&quot; name=&quot;size&quot; value=&quot;small&quot; data-simply-field=&quot;size&quot;&gt;Small
+&lt;input type=&quot;radio&quot; name=&quot;size&quot; value=&quot;large&quot; data-simply-field=&quot;size&quot;&gt;Large
+&lt;div data-simply-field=&quot;size&quot; data-simply-content=&quot;template&quot;&gt;
+        &lt;template data-simply-template=&quot;small&quot;&gt;
+                Small size selected
+        &lt;/template&gt;
+        &lt;template data-simply-template=&quot;large&quot;&gt;
+                Large size selected
+        &lt;/template&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="lists">
@@ -68,6 +135,12 @@
 </div>
 <div class="section" id="id1">
 <h3>data-simply-template<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="data-simply-entry">
+<h3>data-simply-entry<a class="headerlink" href="#data-simply-entry" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="data-simply-list-item">
+<h3>data-simply-list-item<a class="headerlink" href="#data-simply-list-item" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="misc">
@@ -83,6 +156,9 @@
 </div>
 <div class="section" id="data-simply-edit">
 <h3>data-simply-edit<a class="headerlink" href="#data-simply-edit" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="data-simply-default-value">
+<h3>data-simply-default-value<a class="headerlink" href="#data-simply-default-value" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="script">
@@ -125,6 +201,8 @@
 <li><a class="reference internal" href="#data-simply-list">data-simply-list</a></li>
 <li><a class="reference internal" href="#data-simply-sortable">data-simply-sortable</a></li>
 <li><a class="reference internal" href="#id1">data-simply-template</a></li>
+<li><a class="reference internal" href="#data-simply-entry">data-simply-entry</a></li>
+<li><a class="reference internal" href="#data-simply-list-item">data-simply-list-item</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#misc">Misc</a><ul>
@@ -132,6 +210,7 @@
 <li><a class="reference internal" href="#data-simply-selectable">data-simply-selectable</a></li>
 <li><a class="reference internal" href="#data-simply-hidden">data-simply-hidden</a></li>
 <li><a class="reference internal" href="#data-simply-edit">data-simply-edit</a></li>
+<li><a class="reference internal" href="#data-simply-default-value">data-simply-default-value</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#script">Script</a><ul>
@@ -146,6 +225,12 @@
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to SimplyEdit Reference&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="events.html"
+                        title="next chapter">SimplyEdit Events</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/attributes.txt"
@@ -174,6 +259,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="events.html" title="SimplyEdit Events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to SimplyEdit Reference’s documentation!"
+             >previous</a> |</li>
         <li><a href="index.html">SimplyEdit Reference 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
