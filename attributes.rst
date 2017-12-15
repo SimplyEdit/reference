@@ -1,11 +1,8 @@
 SimplyEdit Attributes
 =====================
 
-Fields
-------
-
 data-simply-field
-~~~~~~~~~~~~~~~~~
+-----------------
 
 ::
 
@@ -33,7 +30,7 @@ Fields with the same name on the same page will always have the same content. Ex
 field is part of a list entry, or if you've specified a different path with ``data-simply-path``.
 
 data-simply-content
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 ::
 
@@ -59,7 +56,7 @@ the following values:
 
 
 data-simply-attributes
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 ::
 
@@ -72,7 +69,7 @@ data-simply-attributes
 
 
 data-simply-template
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 ::
 
@@ -89,56 +86,47 @@ data-simply-template
 
 
 
-Lists
------
-
 data-simply-list
-~~~~~~~~~~~~~~~~
+----------------
 
 data-simply-sortable
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 data-simply-template
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 data-simply-entry
-~~~~~~~~~~~~~~~~~
+-----------------
 
 data-simply-list-item
-~~~~~~~~~~~~~~~~~~~~~
-
-Misc
-----
+---------------------
 
 data-simply-path
-~~~~~~~~~~~~~~~~
+----------------
 
 data-simply-selectable
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 data-simply-hidden
-~~~~~~~~~~~~~~~~~~
+------------------
 
 data-simply-edit
-~~~~~~~~~~~~~~~~
+----------------
 
 data-simply-default-value
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Script
-------
+-------------------------
 
 data-api-key
-~~~~~~~~~~~~
+------------
 
 data-simply-settings
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 data-simply-endpoint
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 data-simply-images
-~~~~~~~~~~~~~~~~~~
+------------------
 
 data-simply-files
-~~~~~~~~~~~~~~~~~
+-----------------
